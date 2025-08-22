@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@theme {
+  --spacing-mainW: 80%;
+  --spacing-container: 1200px;
+  --breakpoint-x1000x: 1000px;
+  --color-topNav: rgba(255, 255, 255, 0.05);
+  --color-topNavText: rgba(255, 255, 255, 0.5);
+  --color-topNavBorder: rgba(255, 255, 255, 0.1);
+  --color-themeGold: #c8a97e;
+}
+#headerContiner {
+  background-image: url(/bg_1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
