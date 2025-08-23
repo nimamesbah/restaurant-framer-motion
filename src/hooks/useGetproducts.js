@@ -11,6 +11,6 @@ export default function useGetProduct(id = "") {
     }
     return useQuery({
         queryFn,
-        queryKey: [`products${id}`]
+        queryKey: [`products-${id}`]
     })
 }

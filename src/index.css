@@ -3,10 +3,12 @@
   --spacing-mainW: 80%;
   --spacing-container: 1200px;
   --breakpoint-x1000x: 1000px;
+  --breakpoint-x580x: 580px;
   --color-topNav: rgba(255, 255, 255, 0.05);
   --color-topNavText: rgba(255, 255, 255, 0.5);
   --color-topNavBorder: rgba(255, 255, 255, 0.1);
   --color-themeGold: #c8a97e;
+  --color-darkText: #333333;
 }
 #headerContiner {
   background-image: url(/bg_1.jpg);

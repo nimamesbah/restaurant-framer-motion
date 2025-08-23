@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import useGetProduct from "../hooks/useGetproducts";
-import HeaderCard from "./product-cards/Cards";
+import HeaderCard, { HeaderCardSkeleton } from "./product-cards/Cards";
 
 function Header() {
   const { data, isError, isLoading } = useGetProduct();
@@ -19,7 +19,7 @@ function Header() {
           <div id="headerContent" className="w-full h-full">
             <div
               id="numEmailPcCont"
-              className="w-full  max-sm:hidden bg-topNav py-2 text-topNavText font-mono"
+              className="w-full  max-x1000x:hidden bg-topNav py-2 text-topNavText font-mono"
             >
               <div className="w-mainW mx-auto flex justify-between items-center max-w-container">
                 <div className="flex justify-between gap-3 ">
@@ -59,7 +59,7 @@ function Header() {
             </div>
             <div
               id="navbarContPc"
-              className=" flex-col justify-between hidden sm:flex text-white border border-topNavBorder w-full h-[550px]"
+              className=" flex-col justify-between hidden x1000x:flex text-white border border-topNavBorder w-full h-[550px]"
             >
               <div
                 id="navbarPc"
@@ -80,7 +80,12 @@ function Header() {
                 className="flex w-mainW gap-4 mx-auto justify-between items-center border-t border-topNavBorder py-3.5"
               >
                 {isLoading ? (
-                  <h1>loading.....</h1>
+                  <>
+                    <HeaderCardSkeleton />
+                    <HeaderCardSkeleton />
+                    <HeaderCardSkeleton />
+                    <HeaderCardSkeleton />
+                  </>
                 ) : (
                   data
                     .map((item) => (
@@ -91,7 +96,7 @@ function Header() {
               </div>
             </div>
 
-            <div id="mobileNavCont" className="bg-black w-full sm:hidden">
+            <div id="mobileNavCont" className="bg-black w-full x1000x:hidden">
               <div className="w-mainW flex justify-between mx-auto text-gray-300 ">
                 <h1 className="capitalize  text-2xl py-5 font-bold text-white ">
                   feliciano
@@ -128,6 +133,23 @@ function Header() {
             </div>
           </div>
         </div>
+      </div>
+      <div
+        id="mobile4FoodAd"
+        className="x1000x:hidden justify-center items-center flex-wrap flex mt-20 gap-25 w-mainW mx-auto "
+      >
+        {isLoading ? (
+          <>
+            <HeaderCardSkeleton />
+            <HeaderCardSkeleton />
+            <HeaderCardSkeleton />
+            <HeaderCardSkeleton />
+          </>
+        ) : (
+          data
+            .map((item) => <HeaderCard name={item.name} image={item.image} />)
+            .slice(10, 14)
+        )}
       </div>
     </>
   );
