@@ -23,16 +23,22 @@ export function HeaderCardSkeleton() {
     </>
   );
 }
-export function MenuCard({ image, name, ingred, price }) {
+export function MenuCard({ image, name, ingred, price, index }) {
   return (
     <>
-      <div className="flex flex-col x580x:flex-row justify-between items-center x580x:w-max w-full text-darkText">
-        <div className="x580x:w-[300px] h-[300px] border w-full">
+      <div
+        className={`flex flex-col ${
+          index % 4 === 0 || index % 4 === 1
+            ? "x580x:flex-row-reverse"
+            : "x580x:flex-row"
+        } justify-between items-center x580x:w-[450px] w-full text-darkText border border-menuBorder`}
+      >
+        <div className="w-full h-[400px] x580x:w-1/2  flex-shrink-0">
           <img className="w-full h-full object-cover" src={image} alt="" />
         </div>
-        <div className="flex flex-col gap-5 w-full px-6 py-5">
+        <div className="flex flex-col gap-5 w-full h-full px-6 py-5 x580x:w-1/2 ">
           <div className="flex justify-between w-full">
-            <div className="text-2xl font-bold">{name}</div>
+            <div className="text-xl font-bold">{name}</div>
             <div className="text-themeGold text-2xl">${price}</div>
           </div>
           <div className=" ">

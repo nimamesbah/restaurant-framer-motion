@@ -9,6 +9,7 @@
   --color-topNavBorder: rgba(255, 255, 255, 0.1);
   --color-themeGold: #c8a97e;
   --color-darkText: #333333;
+  --color-menuBorder: #e6e6e6;
 }
 #headerContiner {
   background-image: url(/bg_1.jpg);
