@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import useGetProduct from "../../hooks/useGetproducts";
 import { MenuCard } from "../product-cards/Cards";
+import About from "./components/about";
 
 function Home() {
   const { data, isError, isLoading } = useGetProduct();
@@ -9,6 +10,7 @@ function Home() {
   }, [data]);
   return (
     <>
+      <About />
       <h1 className="capitalize text-4xl text-center my-12 ">
         browse our menu
       </h1>
