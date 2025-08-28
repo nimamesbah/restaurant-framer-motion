@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import useGetProduct from "../../hooks/useGetproducts";
 import { MenuCard } from "../product-cards/Cards";
 import About from "./components/about";
+import Chefs from "./components/Chefs";
 
 function Home() {
   const { data, isError, isLoading } = useGetProduct();
@@ -18,17 +19,20 @@ function Home() {
         {isLoading ? (
           <h1>loading</h1>
         ) : (
-          data.map((item, index) => (
-            <MenuCard
-              name={item.name}
-              image={item.image}
-              price={item.userId}
-              ingred={item.ingredients}
-              index={index}
-            />
-          ))
+          data
+            .map((item, index) => (
+              <MenuCard
+                name={item.name}
+                image={item.image}
+                price={item.userId}
+                ingred={item.ingredients}
+                index={index}
+              />
+            ))
+            .slice(22, 30)
         )}
       </div>
+      <Chefs />
     </>
   );
 }
